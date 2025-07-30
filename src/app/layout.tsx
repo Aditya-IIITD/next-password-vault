@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
 
 //Local Imports
+import './globals.css'
 import { QueryProvider } from '@components/providers/queryClientProvider'
 import { preFetchQueries } from '@lib/query/server-query'
 
@@ -28,7 +28,7 @@ export default async function RootLayout({
 }>) {
   const dehydratedState = await preFetchQueries()
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
